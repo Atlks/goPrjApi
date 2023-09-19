@@ -2,9 +2,7 @@ package main
 
 import (
 	. "fmt"
-	ss "goapiPrj/lib"
-	"io/ioutil"
-	"net/http"
+	"goapiPrj/lib"
 )
 
 func main() {
@@ -12,8 +10,12 @@ func main() {
 	html := "1"
 	Println(html)
 
+	url := "http://localhost:8000/api?callfun=exit"
+	http_get(url)
+	//------------------------
+
 	Println("\r\n\r\n")
-	url := "http://localhost:8000/api?callfun=login%20111356,26916DD661300B25,1BC0036763DE22EC"
+	url = "http://localhost:8000/api?callfun=login%20111356,26916DD661300B25,1BC0036763DE22EC"
 
 	html = http_get(url)
 
@@ -31,24 +33,29 @@ func main() {
 	Println("\r\n\r\n")
 	url = "http://localhost:8000/api?callfun=xiafen%20777%201"
 	http_get(url)
+
+	//-------------------
 	Println("\r\n\r\n")
 	url = "http://localhost:8000/api?callfun=kick%20777"
 	http_get(url)
 	url = "http://localhost:8000/api?callfun=QryShangxiafen"
 	http_get(url)
+
+	url = "http://localhost:8000/api?callfun=kexiafenBal%20777"
+	http_get(url)
+
+	url = "http://localhost:8000/api?callfun=addUser%20111%201"
+	http_get(url)
+
+	url = "http://localhost:8000/api?callfun=oplog_qry"
+	//--------------------10
+	http_get(url)
+	url = "http://localhost:8000/api?callfun=includeXAjax%20head.htm"
+	http_get(url)
+
+	url = "111356,26916DD661300B25,1BC0036763DE22EC"
 }
 
 func http_get(url string) string {
-	Println("\r\n" + url)
-	resp, _ := http.Get(url)
-
-	defer resp.Body.Close()
-
-	// 读取资源数据 body: []byte
-	body, _ := ioutil.ReadAll(resp.Body)
-	//io.Copy(os.Stdout, resp.Body)
-	s := string(body)
-	content := ss.Left(s, 300)
-	Println("[http get]ret=>" + content)
-	return s
+	return lib.Http_get(url)
 }

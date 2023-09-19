@@ -1,0 +1,99 @@
+2023/09/19 16:05:01 
+2023/09/19 16:05:01 
+2023/09/19 16:05:01 
+2023/09/19 16:05:01 http://localhost:8000/api?callfun=exit
+2023/09/19 16:05:01 [http get]ret=>
+2023/09/19 16:05:01 
+2023/09/19 16:05:01 
+2023/09/19 16:05:01 
+2023/09/19 16:05:01 http://localhost:8000/api?callfun=login%20111356,26916DD661300B25,1BC0036763DE22EC
+2023/09/19 16:05:01 [http get]ret=>"agtid":"111356","descode":"26916DD661300B25","md5key":"1BC0036763DE22EC","lgky":"111356,26916DD661300B25,1BC0036763DE22EC"
+2023/09/19 16:05:01 
+2023/09/19 16:05:01 
+2023/09/19 16:05:01 
+2023/09/19 16:05:01 http://localhost:8000/api?callfun=qryAgtBal%20111356
+2023/09/19 16:05:01 [http get]ret=>"maintype":"/GameHandle","type":9,"data":{"code":0,"score":1782.0}
+2023/09/19 16:05:01 
+2023/09/19 16:05:01 
+2023/09/19 16:05:01 
+2023/09/19 16:05:01 http://localhost:8000/api?callfun=searchPlayer%20777
+2023/09/19 16:05:02 [http get]ret=>"maintype":"/GameHandle","type":7,"data":{"code":0,"agentid":111356,"linecode":"10001_1","status":0,"userid":32077089,"account":"777","totalScore":882.0,"integralvalue":6.0,"addscore":1193.0,"subscore":311.0,"addscoretimes":56,"subscoretimes":49,"totalwinlose":0.0,"totalrevenue":0.0}
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 http://localhost:8000/api?callfun=shangfen%20777%202
+2023/09/19 16:05:02 [http get]ret=>"maintype":"/GameHandle","type":2,"data":{"orderid":"1113561695114302000777","agentid":111356,"account":"777","score":2.000000,"code":0,"errmsg":"success dt(0.010509s)"}}
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 http://localhost:8000/api?callfun=xiafen%20777%201
+2023/09/19 16:05:02 [http get]ret=>"maintype":"/GameHandle","type":3,"data":{"orderid":"1113561695114302000777","agentid":111356,"account":"777","score":1.000000,"code":0,"errmsg":"success dt(0.010577s)"}}
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 http://localhost:8000/api?callfun=kick%20777
+2023/09/19 16:05:02 [http get]ret=>"maintype":"/GameHandle","type":8,"data":{"code":0}
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 http://localhost:8000/api?callfun=QryShangxiafen
+2023/09/19 16:05:02 [http get]ret=>
+  {
+    "agtid": "111356",
+    "uname": "777",
+    "score": "2",
+    "类型": "上分",
+    "time": "2023-09-19 16:05:02"
+  },
+  {
+    "uname": "777",
+    "score": "1",
+    "类型": "下分",
+    "time": "2023-09-19 16:05:02"
+  },
+  {
+    "agtid": "111356",
+    "uname": "777",
+    "score": "2",
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 http://localhost:8000/api?callfun=kexiafenBal%20777
+2023/09/19 16:05:02 [http get]ret=>"maintype":"/GameHandle","type":1,"data":{"code":0,"account":"777","score":883.0}
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 http://localhost:8000/api?callfun=addUser%20111%201
+2023/09/19 16:05:02 [http get]ret=>"maintype":"/GameHandle","type":0,"data":{"account":"111","code":0,"url":"https://dd60749a.nnsbo.com?08TqyxKA=YsO190OaxP8OUDyqboQAdtdACjhVnm1F7qWIpsIaGcw%3D&gamebackurl=VPPf%2FVHC%2Bxj7%2FyxqZhvITQ%3D%3D&vzGYhgYC=mhgA9XXJH%2BFa7Z2LtRGfSbLZ%2FYlIIiWzsWNHH9OTGR8NmT6a9NlzKYgKLsCX0YUK%2FGyxmaJoLBda56Sf
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 http://localhost:8000/api?callfun=oplog_qry
+2023/09/19 16:05:02 [http get]ret=>
+  {
+    "agtid": "111356",
+    "op": "上分操作",
+    "uname": "777",
+    "score": "2",
+    "类型": "上分",
+    "time": "2023-09-19 16:05:02"
+  },
+  {
+    "agtid": "111356",
+    "op": "下分操作",
+    "uname": "777",
+    "score": "1",
+    "类型": "下分",
+    "time": "2023-09-19 16:05
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 
+2023/09/19 16:05:02 http://localhost:8000/api?callfun=includeXAjax%20head.htm
+2023/09/19 16:05:02 [http get]ret=>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb menu405">
+
+    <li id="aIdx" class="breadcrumb-item0"><a href="index.html" target="_top"> 首页 </a></li>
+
+    <li id="aSxf" style="" class="breadcrumb-item0"><a href="shangxiafen.htm">上下分管理</a></li>
+    <li id="aUser" class="b
