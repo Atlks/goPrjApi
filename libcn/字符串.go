@@ -1,4 +1,4 @@
-package lib
+package 类库包
 
 import (
 	"goapiPrj/lib"
@@ -9,16 +9,18 @@ func F长度(字符串 string) int {
 	return lib.Len(字符串)
 }
 
-func F修剪空格(字符串 string) string {
-	return strings.TrimSpace(字符串)
-}
-
-func 长度(字符串 string) int {
+func I长度(字符串 string) int {
 	return lib.Len(字符串)
 }
 
-func F截取(字符串 string) string {
+func F修剪空格(字符串 string) string {
 	return strings.TrimSpace(字符串)
+
+}
+
+func F截取(字符串 string, 开始位置 int, 结束位置 int) string {
+	return lib.Substr(字符串, 开始位置, 结束位置)
+
 }
 
 func F左截取(字符串 string, 长度 int) string {
@@ -38,4 +40,8 @@ func F替换(字符串 string, 旧子串 string, 新子串 string) string {
 func F连接(字符串1 string, 字符串2 string) string {
 
 	return 字符串1 + 字符串2
+}
+func F拆分(字符串 string, 拆分子串 string) []string {
+	return strings.Split(字符串, 拆分子串)
+
 }

@@ -1,4 +1,4 @@
-package main
+package lib
 
 //  package utils // 声明包名为 utils
 

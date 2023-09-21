@@ -2,31 +2,30 @@ package main
 
 import (
 	"fmt"
-	"net/http"
 )
 
 /*
 *
 http://localhost:8000/api?call=Log%2011111
 */
-func Handler1(w http.ResponsgodoceWriter, r *http.Request) {
-	values := r.URL.Query()
-	callfun := values.Get("call")
-	fmt.Fprintf(w, "callfun=>"+callfun)
-}
-
-//func main() {
-//
+//func Handler1(w http.ResponsgodoceWriter, r *http.Request) {
+//	values := r.URL.Query()
+//	callfun := values.Get("call")
+//	fmt.Fprintf(w, "callfun=>"+callfun)
 //}
-
-func main22() {
-
-	//	exec()
-
-	http.HandleFunc("/", Handler1)
-	http.HandleFunc("/api", Handler1)
-	http.ListenAndServe(":8000", nil)
-}
+//
+////func main() {
+////
+////}
+//
+//func main22() {
+//
+//	//	exec()
+//
+//	http.HandleFunc("/", Handler1)
+//	http.HandleFunc("/api", Handler1)
+//	http.ListenAndServe(":8000", nil)
+//}
 
 func exec() {
 	//datapath := "C:\\electron\\dist\\electron.exe   "
