@@ -2,7 +2,7 @@ package lib
 
 import "net/http"
 
-func setcookie(name string, v string, w http.ResponseWriter) {
+func set_cookie(name string, v string, w http.ResponseWriter) {
 
 	cookie := http.Cookie{
 		Name:  "_cookie",

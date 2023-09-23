@@ -2,13 +2,10 @@ package 类库包
 
 import "testing"
 
-func TestI登录流程(t *testing.T) {
-
-	//I登录流程("aaa", "123")
+func Test检查注册信息(t *testing.T) {
 	m := map[string]string{
 		"用户名": "我是谁啊",
 		"密码":  "111",
 	}
-	I登录流程(m)
-
+	I注册流程(m)
 }
