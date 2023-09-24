@@ -5,7 +5,7 @@ import (
 	. "goapiPrj/libcn"
 )
 
-func main() {
+func maintt() {
 
 	//fmt.Println(lib.Len("aaa"))
 	//fmt.Println(..F长度("aaa"))

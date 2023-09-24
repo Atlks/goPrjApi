@@ -14,7 +14,7 @@ import (
 // @title           Swagger Example API
 // @version         1.0
 // @description     This is a sample server celler server.
-func main() {
+func main2() {
 
 	Println("hello22233")
 	//	exec()
