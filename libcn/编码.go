@@ -6,6 +6,10 @@ func 去除Html标记(html string) string {
 	return lib.Strip_tags(html)
 }
 
+func 去除Html标记(html string) string {
+	return lib.Strip_tags(html)
+}
+
 func shell参数编码(shell参数 string) string {
 	return lib.EncodeShellCmd(shell参数)
 }
