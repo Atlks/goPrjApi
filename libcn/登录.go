@@ -29,7 +29,7 @@ func I登录流程密码模式(凭据 map[string]string) {
 		// 检查通过，开始登陆
 		// 如果是登录凭据是密码类型则发放登录凭据(凭据)
 		发放登录凭据(凭据["用户名"]),
-		添加操作日志("用户:(@用户名@)  事件:登录，时间:@当前时间@ ip:@ip@"),
+		//添加操作日志("用户:(@用户名@)  事件:登录，时间:@当前时间@ ip:@ip@"),
 	)()
 
 }
@@ -116,10 +116,10 @@ func funs(b bool, fs ...func(...any)) {
 
 }
 
-func 添加操作日志(内容 string) func() {
-	return func() {
+func 添加操作日志(内容 string) func(...any) any {
+	return func(x ...any) any {
 		fmt.Println("...操作日志内容  " + 内容 + "... ...")
-
+		return nil
 	}
 }
 
@@ -143,6 +143,23 @@ func 检查通过(检查结果 string) bool {
 	return false
 }
 func 如果(条件 bool, 指令集 ...func(...any) any) func() {
+
+	return func() {
+		if 条件 {
+			for index, value := range 指令集 {
+
+				fmt.Println(index)
+				value()
+				//var fun func()
+				//fun : = value
+				//fmt.Println("Index =", index, "Value =", value)
+			}
+		}
+	}
+
+}
+
+func 如果2(条件 bool, 指令集 ...func(...any) any) func() {
 
 	return func() {
 		if 条件 {

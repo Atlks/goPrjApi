@@ -6,12 +6,52 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"net/url"
+	"strconv"
+	"strings"
 )
 
 func EncodeShellCmd(rcd string) string {
 
 	// String ( JSON.stringify(rcd)  )
 	return ""
+}
+
+func HexEncode(src []byte) string {
+	// 编码
+	//src := []byte("hello")
+	//maxEnLen := hex.EncodedLen(len(src)) // 最大编码长度
+	//dst1 := make([]byte, maxEnLen)
+	//n := hex.Encode(dst1, src)
+	dst2 := hex.EncodeToString(src)
+	//fmt.Println("编码后的结果:", string(dst1[:n]))
+	//fmt.Println("编码后的结果:", dst2)
+	return dst2
+}
+
+func UnicodeEncode(ch string) string {
+	return EscapeUnicode(ch)
+}
+
+func HtmlEncode(ch string) string {
+	return EscapeUnicode(ch)
+}
+
+// EscapeUnicode 字符转码成unicode编码
+func EscapeUnicode(text string) string {
+	unicodeText := strconv.QuoteToASCII(text)
+	// 去掉返回内容两端多余的双引号
+	return unicodeText[1 : len(unicodeText)-1]
+}
+
+// UnescapeUnicode 将unicode编码转换成中文
+func UnescapeUnicode(uContent string) (string, error) {
+	// 转码前需要先增加上双引号，Quote增加双引号会将\u转义成\\u，同时会处理一些非打印字符
+	content := strings.Replace(strconv.Quote(uContent), `\\u`, `\u`, -1)
+	text, err := strconv.Unquote(content)
+	if err != nil {
+		return "", err
+	}
+	return text, nil
 }
 
 func Strip_tags(t string) string {

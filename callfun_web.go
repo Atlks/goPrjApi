@@ -19,11 +19,22 @@ func Handler1(w http.ResponseWriter, r *http.Request) {
 	fun := arr[0]
 	m := map[string]any{
 		"注册流程":  类库包.I注册流程,
-		"login": 类库包.I登录流程,
+		"login": I登录流程,
 		"reg":   类库包.I注册流程,
 	}
 	funx := m[fun]
 	fmt.Println(funx)
+
+}
+
+func I登录流程(凭据 map[string]string) {
+
+	//检查结果 := 检查登录凭据(凭据)
+	//如果(检查通过(检查结果),
+	//	如果是登录凭据是密码类型则发放登录凭据(凭据),
+	//	添加操作日志("用户 (@用户名@)登录，时间 @当前时间@"),
+	//)
+	//如果(检查不通过(检查结果), 提示并终止(检查结果))
 
 }
 

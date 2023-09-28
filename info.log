@@ -557,3 +557,201 @@
 
     <li id="aSxf" style="" class="breadcrumb-item0"><a href="shangxiafen.htm">上下分管理</a></li>
     <li id="aUser" class="b
+2023/09/27 21:55:35 
+2023/09/27 21:55:35 
+2023/09/27 21:55:35 
+2023/09/27 21:55:35 http://localhost:8000/callrmt?callfun=exit
+2023/09/27 21:55:35 [http get]ret=>
+2023/09/27 21:55:35 
+2023/09/27 21:55:35 
+2023/09/27 21:55:35 
+2023/09/27 21:55:35 http://localhost:8000/callrmt?callfun=login%20111356,26916DD661300B25,1BC0036763DE22EC
+2023/09/27 21:55:35 [http get]ret=>
+  "stack1": "ReferenceError: uNkey is not defined\n    at getLoginToken (C:\\modyfing\\apiprj\\jbbot\\zmng\\libBiz\\user.js:99:18)\n    at buildUrlNgetV3 (C:\\modyfing\\apiprj\\jbbot\\zmng\\libBiz\\bizHttp.js:142:21)\n    at buildUrlNgetV2 (C:\\modyfing\\apiprj\\jbbot\\zmng\\libBiz\\bizHttp.js:184
+2023/09/27 21:55:35 
+2023/09/27 21:55:35 
+2023/09/27 21:55:35 
+2023/09/27 21:55:35 http://localhost:8000/callrmt?callfun=qryAgtBal%20111356
+2023/09/27 21:55:36 [http get]ret=>"maintype":"/GameHandle","type":9,"data":{"code":0,"score":6943.0}
+2023/09/27 21:55:36 
+2023/09/27 21:55:36 
+2023/09/27 21:55:36 
+2023/09/27 21:55:36 http://localhost:8000/callrmt?callfun=searchPlayer%20777
+2023/09/27 21:55:37 [http get]ret=>"maintype":"/GameHandle","type":7,"data":{"code":0,"agentid":111356,"linecode":"10001_1","status":0,"userid":32077089,"account":"777","totalScore":77.0,"integralvalue":6.0,"addscore":1279.0,"subscore":1202.0,"addscoretimes":63,"subscoretimes":56,"totalwinlose":0.0,"totalrevenue":0.0}
+2023/09/27 21:55:37 
+2023/09/27 21:55:37 
+2023/09/27 21:55:37 
+2023/09/27 21:55:37 http://localhost:8000/callrmt?callfun=shangfen%20777%202
+2023/09/27 21:55:38 [http get]ret=>"maintype":"/GameHandle","type":2,"data":{"orderid":"1113561695826537000777","agentid":111356,"account":"777","score":2.000000,"code":0,"errmsg":"success dt(0.012614s)"}}
+2023/09/27 21:55:38 
+2023/09/27 21:55:38 
+2023/09/27 21:55:38 
+2023/09/27 21:55:38 http://localhost:8000/callrmt?callfun=xiafen%20777%201
+2023/09/27 21:55:38 [http get]ret=>
+  "stack1": "TypeError: Cannot read properties of undefined (reading 'query')\n    at getLoginToken (C:\\modyfing\\apiprj\\jbbot\\zmng\\libBiz\\user.js:85:13)\n    at getDbdir (C:\\modyfing\\apiprj\\jbbot\\zmng\\libBiz\\bzDb.js:12:17)\n    at String.xiafen (C:\\modyfing\\apiprj\\jbbot\\zmng\\libBi
+2023/09/27 21:55:38 
+2023/09/27 21:55:38 
+2023/09/27 21:55:38 
+2023/09/27 21:55:38 http://localhost:8000/callrmt?callfun=kick%20777
+2023/09/27 21:55:43 [http get]ret=>"maintype":"/GameHandle","type":8,"data":{"code":0}
+2023/09/27 21:55:43 
+2023/09/27 21:55:43 
+2023/09/27 21:55:43 
+2023/09/27 21:55:43 http://localhost:8000/callrmt?callfun=QryShangxiafen
+2023/09/27 21:55:43 [http get]ret=>
+  {
+    "uname": "Xxx0079468",
+    "score": "10",
+    "类型": "下分",
+    "time": "2023-09-27 21:10:44"
+  },
+  {
+    "uname": "Xxx0079468",
+    "score": "11",
+    "类型": "下分",
+    "time": "2023-09-27 15:31:42"
+  },
+  {
+    "agtid": 111356,
+    "uname": "Xxx0079468",
+    "score": "10",
+ 
+2023/09/27 21:55:43 
+2023/09/27 21:55:43 
+2023/09/27 21:55:43 
+2023/09/27 21:55:43 http://localhost:8000/callrmt?callfun=kexiafenBal%20777
+2023/09/27 21:55:43 [http get]ret=>"maintype":"/GameHandle","type":1,"data":{"code":0,"account":"777","score":78.0}
+2023/09/27 21:55:43 
+2023/09/27 21:55:43 
+2023/09/27 21:55:43 
+2023/09/27 21:55:43 http://localhost:8000/callrmt?callfun=addUser%20111%201
+2023/09/27 21:55:44 [http get]ret=>lrtEx@玩家已经存�
+2023/09/27 21:55:44 
+2023/09/27 21:55:44 
+2023/09/27 21:55:44 
+2023/09/27 21:55:44 http://localhost:8000/callrmt?callfun=oplog_qry
+2023/09/27 21:55:44 [http get]ret=>
+  {
+    "agtid": "111356",
+    "op": "踢玩家下线",
+    "uname": "777",
+    "类型": "踢玩家下线",
+    "time": "2023-09-27 21:55:42"
+  },
+  {
+    "agtid": 111356,
+    "op": "下分操作",
+    "uname": "Xxx0079468",
+    "txt": "下分10",
+    "score": "10",
+    "类型": "下分",
+    "t
+2023/09/27 21:55:44 
+2023/09/27 21:55:44 
+2023/09/27 21:55:44 
+2023/09/27 21:55:44 http://localhost:8000/callrmt?callfun=includeXAjax%20head.htm
+2023/09/27 21:55:44 [http get]ret=>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb menu405">
+
+    <li id="aIdx" class="breadcrumb-item0"><a href="index.html" target="_top"> 首页 </a></li>
+    <li id="aCfg" class="breadcrumb-item0"><a href="cfg.html">配置管理</a></li>
+    <li id="aSxf" style="" class="breadcrumb-ite
+2023/09/27 22:03:56 
+2023/09/27 22:03:56 
+2023/09/27 22:03:56 
+2023/09/27 22:03:56 http://localhost:8000/callrmt?callfun=exit
+2023/09/27 22:03:56 [http get]ret=>
+2023/09/27 22:03:56 
+2023/09/27 22:03:56 
+2023/09/27 22:03:56 
+2023/09/27 22:03:56 http://localhost:8000/callrmt?callfun=login%20111356,26916DD661300B25,1BC0036763DE22EC
+2023/09/27 22:04:04 [http get]ret=>"agtid":"111356","agentid":"111356","descode":"26916DD661300B25","desCode":"26916DD661300B25","md5key":"1BC0036763DE22EC","md5Code":"1BC0036763DE22EC","lgky":"111356,26916DD661300B25,1BC0036763DE22EC"
+2023/09/27 22:04:04 
+2023/09/27 22:04:04 
+2023/09/27 22:04:04 
+2023/09/27 22:04:04 http://localhost:8000/callrmt?callfun=qryAgtBal%20111356
+2023/09/27 22:04:08 [http get]ret=>"maintype":"/GameHandle","type":9,"data":{"code":0,"score":6945.0}
+2023/09/27 22:04:08 
+2023/09/27 22:04:08 
+2023/09/27 22:04:08 
+2023/09/27 22:04:08 http://localhost:8000/callrmt?callfun=searchPlayer%20777
+2023/09/27 22:04:08 [http get]ret=>"maintype":"/GameHandle","type":7,"data":{"code":0,"agentid":111356,"linecode":"10001_1","status":0,"userid":32077089,"account":"777","totalScore":75.0,"integralvalue":6.0,"addscore":1281.0,"subscore":1206.0,"addscoretimes":64,"subscoretimes":60,"totalwinlose":0.0,"totalrevenue":0.0}
+2023/09/27 22:04:08 
+2023/09/27 22:04:08 
+2023/09/27 22:04:08 
+2023/09/27 22:04:08 http://localhost:8000/callrmt?callfun=shangfen%20777%202
+2023/09/27 22:04:08 [http get]ret=>"maintype":"/GameHandle","type":2,"data":{"orderid":"1113561695827048000777","agentid":111356,"account":"777","score":2.000000,"code":0,"errmsg":"success dt(0.010082s)"}}
+2023/09/27 22:04:08 
+2023/09/27 22:04:08 
+2023/09/27 22:04:08 
+2023/09/27 22:04:08 http://localhost:8000/callrmt?callfun=xiafen%20777%201
+2023/09/27 22:04:10 [http get]ret=>"maintype":"/GameHandle","type":3,"data":{"orderid":"1113561695827048000777","agentid":111356,"account":"777","score":1.000000,"code":0,"errmsg":"success dt(0.010753s)"}}
+2023/09/27 22:04:10 
+2023/09/27 22:04:10 
+2023/09/27 22:04:10 
+2023/09/27 22:04:10 http://localhost:8000/callrmt?callfun=kick%20777
+2023/09/27 22:04:12 [http get]ret=>"maintype":"/GameHandle","type":8,"data":{"code":0}
+2023/09/27 22:04:12 
+2023/09/27 22:04:12 
+2023/09/27 22:04:12 
+2023/09/27 22:04:12 http://localhost:8000/callrmt?callfun=QryShangxiafen
+2023/09/27 22:04:12 [http get]ret=>
+  {
+    "uname": "777",
+    "score": "1",
+    "类型": "下分",
+    "time": "2023-09-27 22:04:10"
+  },
+  {
+    "uname": "777",
+    "score": "1",
+    "类型": "下分",
+    "time": "2023-09-27 22:03:43"
+  },
+  {
+    "uname": "Xxx0079468",
+    "score": "10",
+    "类型": "下分",
+    "time": "2
+2023/09/27 22:04:12 
+2023/09/27 22:04:12 
+2023/09/27 22:04:12 
+2023/09/27 22:04:12 http://localhost:8000/callrmt?callfun=kexiafenBal%20777
+2023/09/27 22:04:13 [http get]ret=>"maintype":"/GameHandle","type":1,"data":{"code":0,"account":"777","score":76.0}
+2023/09/27 22:04:13 
+2023/09/27 22:04:13 
+2023/09/27 22:04:13 
+2023/09/27 22:04:13 http://localhost:8000/callrmt?callfun=addUser%20111%201
+2023/09/27 22:04:14 [http get]ret=>lrtEx@玩家已经存�
+2023/09/27 22:04:14 
+2023/09/27 22:04:14 
+2023/09/27 22:04:14 
+2023/09/27 22:04:14 http://localhost:8000/callrmt?callfun=oplog_qry
+2023/09/27 22:04:14 [http get]ret=>
+  {
+    "agtid": "111356",
+    "op": "下分操作",
+    "uname": "777",
+    "txt": "下分1",
+    "score": "1",
+    "类型": "下分",
+    "time": "2023-09-27 22:04:10"
+  },
+  {
+    "agtid": "111356",
+    "op": "踢玩家下线",
+    "uname": "777",
+    "类型": "踢玩家下线",
+    "time": "
+2023/09/27 22:04:14 
+2023/09/27 22:04:14 
+2023/09/27 22:04:14 
+2023/09/27 22:04:14 http://localhost:8000/callrmt?callfun=includeXAjax%20head.htm
+2023/09/27 22:04:14 [http get]ret=>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb menu405">
+
+    <li id="aIdx" class="breadcrumb-item0"><a href="index.html" target="_top"> 首页 </a></li>
+    <li id="aCfg" class="breadcrumb-item0"><a href="cfg.html">配置管理</a></li>
+    <li id="aSxf" style="" class="breadcrumb-ite

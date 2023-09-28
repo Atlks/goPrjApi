@@ -1,6 +1,9 @@
 package 类库包
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestI登录流程(t *testing.T) {
 
@@ -9,6 +12,7 @@ func TestI登录流程(t *testing.T) {
 		"用户名": "我是谁啊",
 		"密码":  "111",
 	}
-	I登录流程(m)
+	fmt.Println(m)
+	//I登录流程(m)
 
 }
