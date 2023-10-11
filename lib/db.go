@@ -1,19 +1,27 @@
 package lib
 
-import "os"
+import (
+	"os"
+)
 
-func Pdo_Insert(rcd any, collName string, storedir string) any {
+func Pdo_Insert(rcd map[string]any, collName string, storedir string) any {
 
 	// log_enterFun(arguments)
 
 	dbdir := storedir + collName
 	//递归创建文件夹
 	os.MkdirAll(dbdir, os.ModePerm)
-
+	rowid := CURRENT_TIME_forID()
+	rcd["_fil"] = rowid
 	str := Json_encode(rcd)
 
-	dbf := dbdir + "/" + "rowid.json"
+	//rowid := rand.Intn(999999999)
+	//strconv.Itoa(rowid)
+
+	dbf := dbdir + "/" + rowid + ".json"
+
 	Write(dbf, str)
+
 	return rcd
 }
 

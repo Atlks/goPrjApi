@@ -11,5 +11,6 @@ func TestHandler100(t *testing.T) {
 		"id":   1,
 		"name": 2,
 	}
+
 	Pdo_Insert(rcd, "coll33", "c:/dbx/")
 }
