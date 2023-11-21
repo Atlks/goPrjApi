@@ -15,6 +15,11 @@ func IntToStr(xx int) string {
 	return strconv.Itoa(xx)
 }
 
+func RdmMax(max int) int {
+	rand.Seed(time.Now().UnixNano())
+	return rand.Intn(max)
+}
+
 func Rdm() int {
 	rand.Seed(time.Now().UnixNano())
 	return rand.Intn(999999999)

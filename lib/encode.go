@@ -60,7 +60,8 @@ func Strip_tags(t string) string {
 
 func Json_encode(obj any) string {
 
-	bytes, _ := json.Marshal(obj)
+	//prefix ==per line frt char
+	bytes, _ := json.MarshalIndent(obj, "", "  ")
 	return (string(bytes))
 }
 

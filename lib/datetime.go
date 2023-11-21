@@ -10,6 +10,11 @@ func Timestamp() int64 {
 	return timestamp
 }
 
+//import (
+//"time"
+//)
+//int64(time.Now().Unix())
+
 func CURRENT_TIME_forID() string {
 
 	now := time.Now()
