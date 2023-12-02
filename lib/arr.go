@@ -9,7 +9,7 @@ import (
 func Array_sum(nums []any) float64 {
 	var sum float64 = 0
 	for _, num := range nums {
-		numCur, _ := toFloat64(num.Interface())
+		numCur, _ := toFloat64(num)
 		sum += numCur
 	}
 	return sum
@@ -17,13 +17,54 @@ func Array_sum(nums []any) float64 {
 
 // found := inArray("apple", []interface{}{"banana", "orange", "apple"})
 // fmt.Println(found) // 输出：true
-func InArray(needle interface{}, haystack []interface{}) bool {
-	for _, item := range haystack {
+func InArray(needle any, arr []any) bool {
+	for _, item := range arr {
 		if item == needle {
 			return true
 		}
 	}
 	return false
+}
+
+func Filter[T any](slice []T, f func(T) bool) []T {
+	var n []T
+	for _, e := range slice {
+		if f(e) {
+			n = append(n, e)
+		}
+	}
+	return n
+}
+
+func Reduce(arr []string, fn func(s string) int) int {
+	sum := 0
+	for _, it := range arr {
+		sum += fn(it)
+	}
+	return sum
+}
+
+//var list = []string{"Hao", "Chen", "MegaEase"}
+//
+//x := Reduce(list, func(s string) int {
+//	return len(s)
+//})
+//fmt.Printf("%v\n", x)
+
+func MapStrToStr(arr []string, fn func(s string) string) []string {
+	var newArray = []string{}
+	for _, it := range arr {
+		newArray = append(newArray, fn(it))
+	}
+	return newArray
+}
+
+func MapStrToInt(arr []string, fn func(s string) int) []int {
+	var newArray = []int{}
+	for _, it := range arr {
+		newArray = append(newArray, fn(it))
+	}
+	return newArray
 }
 
 func Array_column(structSlice []map[string]any, key string) []any {
