@@ -44,10 +44,10 @@ func main() {
 	//Print(result)
 
 	//------------this is ok
-	fv := reflect.ValueOf(fff)
+	fv := reflect.ValueOf(FF)
 	fv.Call([]reflect.Value{})
 }
 
-func fff() {
+func FF() {
 	Println("ffffjout")
 }

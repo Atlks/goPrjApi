@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"goapiPrj/lib"
 	类库包 "goapiPrj/libcn"
 	"net/http"
 	"strings"
@@ -41,6 +42,9 @@ func I登录流程(凭据 map[string]string) {
 func main() {
 
 	//	exec()
+	lib.MainPain()
+	//	类库.M2()
+	//FF()
 
 	http.HandleFunc("/", Handler1)
 	http.HandleFunc("/api", Handler1)
