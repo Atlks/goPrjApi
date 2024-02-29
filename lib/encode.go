@@ -65,9 +65,9 @@ func Json_encode(obj any) string {
 	return (string(bytes))
 }
 
-func Json_decode(str string) map[string]interface{} {
+func Json_decode(str string) map[string]any {
 	data := []byte(str)
-	mapInterface := make(map[string]interface{})
+	mapInterface := make(map[string]any)
 	json.Unmarshal(data, &mapInterface)
 	return mapInterface
 }

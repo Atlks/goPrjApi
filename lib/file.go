@@ -9,6 +9,12 @@ import (
 	"os"
 )
 
+func ReadToStr(f string) string {
+
+	content, _ := ioutil.ReadFile(f)
+	conStr := string(content)
+	return conStr
+}
 func ReadToJsonArr(f string) []map[string]any {
 	content, err := ioutil.ReadFile(f)
 	if err != nil {
@@ -27,7 +33,7 @@ func ReadToJsonArr(f string) []map[string]any {
 	//注意：反序列化map,不需要make，因为make操作被封装到Unmarshal函数
 	err2 := json.Unmarshal([]byte(content), &slice1)
 	if err2 != nil {
-		fmt.Println("unmarshal err==>%v\n", err2)
+		fmt.Printf("unmarshal err==>%v\n", err2)
 		log.Fatal("Error during Unmarshal()==>>", err2)
 	}
 

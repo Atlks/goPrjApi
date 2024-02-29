@@ -1,7 +1,9 @@
 package lib
 
 import (
+	"fmt"
 	"os"
+	"path/filepath"
 )
 
 func Pdo_Insert(rcd map[string]any, collName string, storedir string) any {
@@ -23,6 +25,26 @@ func Pdo_Insert(rcd map[string]any, collName string, storedir string) any {
 	Write(dbf, str)
 
 	return rcd
+}
+
+func Pdo_qry(storedir string, collName string, f func(any) bool) any {
+
+	var arr []any
+
+	dbdir := storedir + collName
+	err := filepath.Walk(dbdir, func(path string, info os.FileInfo, err error) error {
+		fmt.Println(path)
+		conStr := ReadToStr(path)
+		cont_map := Json_decode(conStr)
+		//	if
+		//追加一个元素
+		arr = append(arr, cont_map)
+		return nil
+	})
+	fmt.Println(err)
+	rows := Filter(arr, f)
+
+	return rows
 }
 
 func pdo_queryV5(qryDsl any, collName string, storedir string) {
