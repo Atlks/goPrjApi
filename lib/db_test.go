@@ -1,9 +1,29 @@
 package lib
 
 import (
+	"database/sql"
 	"fmt"
 	"testing"
 )
+
+func TestMysqlInst(t *testing.T) {
+	//	rcd:={"id":1};
+
+	db, err := sql.Open("mysql", "root:123456@tcp(192.168.128.173:3306)/jianbanbw")
+	CheckErr(err)
+
+	res, err := db.Exec("create database1 db3")
+
+	//	CheckErr(err)
+	//查询删除多少条信息
+	num, err := res.RowsAffected()
+	CheckErr(err)
+	fmt.Println(num) //1  if creted database ok ..
+
+	//关闭数据库连接
+	db.Close()
+
+}
 
 func TestHandler100(t *testing.T) {
 	//	rcd:={"id":1};

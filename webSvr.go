@@ -15,13 +15,13 @@ func Handler2(w http.ResponseWriter, r *http.Request) {
 	values := r.URL.Query()
 	callfun := values.Get("call")
 	fmt.Fprintf(w, "callfun=>"+callfun)
-	arr := strings.Split(callfun, " ")
-	fun := arr[0]
-	m := map[string]any{}
-	funx := m[fun]
+	call_dsl_arr := strings.Split(callfun, " ")
+	fun := call_dsl_arr[0]
+	m_fun_funcode := map[string]any{}
+	funx := m_fun_funcode[fun]
 	fmt.Println(funx)
-	fmt.Println(555)
-	fmt.Fprintf(w, "555")
+	//fmt.Println(555)
+	//	fmt.Fprintf(w, "555")
 }
 
 func main() {

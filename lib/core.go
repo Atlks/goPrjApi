@@ -1,5 +1,6 @@
 package lib
 
+// cvt
 func AnyToMap(v any) map[string]any {
 	map1 := v.(map[string]any)
 	return map1
