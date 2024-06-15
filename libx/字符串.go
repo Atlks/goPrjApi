@@ -1,7 +1,7 @@
-package 包包
+package libx
 
 import (
-	"goapiPrj/lib"
+	"awesomeProject/lib"
 	"strings"
 )
 
