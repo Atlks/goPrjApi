@@ -1,0 +1,54 @@
+{
+  "update_id": 839615727,
+  "message": {
+    "message_id": 435893,
+    "from": {
+      "id": 7166877620,
+      "first_name": "联 盛🌸七 七᥉ꪀᥲ",
+      "username": "lsaqq"
+    },
+    "date": 1718684280,
+    "chat": {
+      "id": -1001613022200,
+      "type": "supergroup",
+      "title": "左道-缅甸便民服务站",
+      "username": "ZuoDaoMianDian",
+      "photo": null,
+      "location": null
+    },
+    "reply_to_message": {
+      "message_id": 435884,
+      "from": {
+        "id": 7226658801,
+        "first_name": "小依依",
+        "username": "zgm8629"
+      },
+      "date": 1718670239,
+      "chat": {
+        "id": -1001613022200,
+        "type": "supergroup",
+        "title": "左道-缅甸便民服务站",
+        "username": "ZuoDaoMianDian",
+        "photo": null,
+        "location": null
+      },
+      "text": "兑换处的联系方式有吗？",
+      "message_auto_delete_timer_changed": null,
+      "proximity_alert_triggered": null,
+      "voice_chat_scheduled": null,
+      "voice_chat_started": null,
+      "voice_chat_ended": null,
+      "voice_chat_participants_invited": null
+    },
+    "text": "小依依  认识我不",
+    "message_auto_delete_timer_changed": null,
+    "proximity_alert_triggered": null,
+    "voice_chat_scheduled": null,
+    "voice_chat_started": null,
+    "voice_chat_ended": null,
+    "voice_chat_participants_invited": null
+  },
+  "my_chat_member": null,
+  "chat_member": null,
+  "chat_join_request": null
+}

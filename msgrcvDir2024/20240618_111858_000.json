@@ -1,0 +1,60 @@
+{
+  "update_id": 839615728,
+  "message": {
+    "message_id": 435894,
+    "from": {
+      "id": 7166877620,
+      "first_name": "联 盛🌸七 七᥉ꪀᥲ",
+      "username": "lsaqq"
+    },
+    "date": 1718684338,
+    "chat": {
+      "id": -1001613022200,
+      "type": "supergroup",
+      "title": "左道-缅甸便民服务站",
+      "username": "ZuoDaoMianDian",
+      "photo": null,
+      "location": null
+    },
+    "photo": [
+      {
+        "file_id": "AgACAgUAAx0CYCTD-AABBqa2ZnEKspg5fDzn-KsHebdnJ3ujpIgAAiS9MRvIS4hXuowEkSZmotsBAAMCAANzAAM1BA",
+        "file_unique_id": "AQADJL0xG8hLiFd4",
+        "width": 90,
+        "height": 14,
+        "file_size": 675
+      },
+      {
+        "file_id": "AgACAgUAAx0CYCTD-AABBqa2ZnEKspg5fDzn-KsHebdnJ3ujpIgAAiS9MRvIS4hXuowEkSZmotsBAAMCAANtAAM1BA",
+        "file_unique_id": "AQADJL0xG8hLiFdy",
+        "width": 320,
+        "height": 49,
+        "file_size": 7282
+      },
+      {
+        "file_id": "AgACAgUAAx0CYCTD-AABBqa2ZnEKspg5fDzn-KsHebdnJ3ujpIgAAiS9MRvIS4hXuowEkSZmotsBAAMCAAN4AAM1BA",
+        "file_unique_id": "AQADJL0xG8hLiFd9",
+        "width": 630,
+        "height": 97,
+        "file_size": 15684
+      }
+    ],
+    "caption": "欧洲杯  上车找七七，不迷茫，全球最高水位 @lsaqq",
+    "caption_entities": [
+      {
+        "type": "mention",
+        "offset": 22,
+        "length": 6
+      }
+    ],
+    "message_auto_delete_timer_changed": null,
+    "proximity_alert_triggered": null,
+    "voice_chat_scheduled": null,
+    "voice_chat_started": null,
+    "voice_chat_ended": null,
+    "voice_chat_participants_invited": null
+  },
+  "my_chat_member": null,
+  "chat_member": null,
+  "chat_join_request": null
+}

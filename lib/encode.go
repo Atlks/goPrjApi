@@ -10,6 +10,24 @@ import (
 	"strings"
 )
 
+// ParseQueryString converts a URL query string to a map
+func parse_str_qrystr(queryStr string) (map[string]string, error) {
+	// Parse the query string
+	values, err := url.ParseQuery(queryStr)
+	if err != nil {
+		return nil, err
+	}
+
+	// Create a map to hold the parsed values
+	result := make(map[string]string)
+	for key, value := range values {
+		// Join multiple values with a comma if there are any
+		result[key] = value[0]
+	}
+
+	return result, nil
+}
+
 func EncodeShellCmd(rcd string) string {
 
 	// String ( JSON.stringify(rcd)  )

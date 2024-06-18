@@ -7,7 +7,66 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"time"
 )
+
+// wrtLgTypeDate 创建目录并将对象编码为 JSON 格式写入带有时间戳的文件中
+func FwrtLgTypeDate(logdir string, o interface{}) {
+	// 创建目录
+	err := os.MkdirAll(logdir, os.ModePerm)
+	if err != nil {
+		panic(fmt.Sprintf("Failed to create directory: %s", err))
+	}
+
+	// 获取当前时间并格式化为文件名
+	timestamp := time.Now().Format("20060102_150405_000")
+	fileName := fmt.Sprintf("%s/%s.json", logdir, timestamp)
+
+	// 将对象编码为 JSON
+	data := Json_encode(o)
+
+	// 写入数据到文件
+	Ffile_put_contents(fileName, data, false)
+	fmt.Printf("Successfully wrote to file: %s\n", fileName)
+}
+
+// filePutContents 写入字符串数据到文件
+// 如果文件不存在，则创建该文件；如果文件已存在，根据标志决定是覆盖还是追加写入。
+// 返回写入的字节数
+func Ffile_put_contents(filename string, data string, append bool) int {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Fprintf(os.Stderr, "Error: %v\n", r)
+		}
+	}()
+
+	var file *os.File
+	var err error
+
+	if append {
+		// 以追加模式打开文件
+		file, err = os.OpenFile(filename, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0644)
+	} else {
+		// 以创建模式打开文件（会覆盖文件内容）
+		file, err = os.Create(filename)
+	}
+
+	if err != nil {
+		panic(fmt.Sprintf("Failed to open or create file: %s", err))
+	}
+	defer file.Close()
+
+	// 将字符串转换为字节数组
+	bytesData := []byte(data)
+
+	// 写入数据到文件
+	bytesWritten, err := file.Write(bytesData)
+	if err != nil {
+		panic(fmt.Sprintf("Failed to write to file: %s", err))
+	}
+
+	return bytesWritten
+}
 
 func ReadToStr(f string) string {
 
