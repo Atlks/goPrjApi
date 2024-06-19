@@ -13,7 +13,8 @@ import (
 func main() {
 	// Example usage of the save function
 
-	botMsgRcvrHdlr()
+	//	lib.BuyEth()
+	//botMsgRcvrHdlr()
 
 	testpkg.Mmm()
 	testSave()
