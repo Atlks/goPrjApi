@@ -8,14 +8,52 @@ import (
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"log"
 	"path/filepath"
+	"time"
 )
 
 func main() {
+	defer lib.HandlePanic()
+
+	//path := "C:\\Users\\Administrator\\OneDrive\\mklv song lst\\Kim Chiu-Wala Man Sa'yo Ang Lahat.mp3"
+	//lib.PlayMp3(path, 30)
+	//time.Sleep(60 * time.Second)
+	//fmt.Printf("....finish...")
+	//return
+
+	lib.EvtBoot(func() {})
+	// 获取当前时间
+	currentTime := time.Now()
+
+	// 打印当前时间
+	fmt.Println("Current time:", currentTime.Format("2006-01-02 15:04:05"))
 	// Example usage of the save function
 
+	//-------------------- 设置间隔时间为 20min
+	interval := 18 * 60 * time.Second
+
+	// 使用匿名函数作为定时器函数
+	timerFunc := func() {
+		defer lib.HandlePanic()
+		//	counter++
+		path := "C:\\Users\\Administrator\\OneDrive\\mklv song lst\\Kim Chiu-Wala Man Sa'yo Ang Lahat.mp3"
+		lib.PlayMp3(path, 60)
+		time.Sleep(60 * time.Second)
+
+		//	fmt.Printf("Function executed %d times at: %s\n", counter, time.Now().Format("2006-01-02 15:04:05"))
+	}
+
+	// 启动定时器，定时执行myFunction
+	go lib.StartTimer(interval, timerFunc)
+
+	// 保持主函数运行
+	select {}
 	//	lib.BuyEth()
 	//botMsgRcvrHdlr()
+	lib.LoopForever()
+	//	funcName222()
+}
 
+func funcName222() {
 	testpkg.Mmm()
 	testSave()
 
