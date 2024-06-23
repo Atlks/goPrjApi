@@ -4,11 +4,11 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
-	"github.com/axgle/mahonia"
 	"github.com/go-ego/gse"
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"strings"
 	"time"
 	"unicode/utf8"
 )
@@ -170,18 +170,38 @@ func crtIdx(messageElement map[string]interface{}, textElement string) {
 	CreateIndexPart2(textElement, othInf)
 }
 
+var TrdSmplfconfigMap, _ = iniToMap("D:\\0prj\\mdsj\\mdsjprj\\libBiz\\trd2smpLibV2.ini")
+
 func TraditionalToSimplified(traditional string) string {
 	// 将繁体中文文本进行分词
 	// 使用 mahonia 进行繁简体转换
-	decoder := mahonia.NewDecoder("gbk")
-	simplified := decoder.ConvertString(traditional)
+	//traditional = "可轉換得到相對應的繁體字或簡體字"
+	simplified := TradtToSmplf(traditional, TrdSmplfconfigMap)
+	//decoder := mahonia.NewDecoder("gbk")
+	//	simplified := decoder.ConvertString(traditional)
 	return simplified
 }
+
+func TradtToSmplf(input string, replacements map[string]string) string {
+	var result strings.Builder
+
+	for _, char := range input {
+		if replacement, found := replacements[string(char)]; found {
+			result.WriteString(replacement)
+		} else {
+			result.WriteRune(char)
+		}
+	}
+
+	return result.String()
+}
 func CreateIndexPart2(msgxv1 string, grpinfo map[string]interface{}) {
-	//msgx := TraditionalToSimplified(msgxv1)
-	msgx := msgxv1
+	msgx := TraditionalToSimplified(msgxv1)
+	//	msgx := msgxv1
 	words := fenci(msgx)
 	for _, word := range words {
+
+		word = strings.TrimSpace(word)
 		if len2024(word) <= 1 || IsNumeric(word) || IsAllPunctuation(word) {
 			continue
 		}
