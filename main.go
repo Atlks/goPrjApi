@@ -15,7 +15,8 @@ func main() {
 
 	defer lib.HandlePanic()
 
-	lib.ReadAndCreateIndex4tgmsg("D:\\0prj\\mdsj\\mdsjprj\\bin\\Debug\\net8.0\\msgRcvDir")
+	lib.SearchMatch("fullTxtSrchIdxdataDir", "饭店 推荐 ")
+	//	lib.ReadAndCreateIndex4tgmsg("D:\\0prj\\mdsj\\mdsjprj\\bin\\Debug\\net8.0\\msgRcvDir")
 
 	lib.EvtBoot(func() {})
 	// 获取当前时间
