@@ -12,13 +12,10 @@ import (
 )
 
 func main() {
+
 	defer lib.HandlePanic()
 
-	//path := "C:\\Users\\Administrator\\OneDrive\\mklv song lst\\Kim Chiu-Wala Man Sa'yo Ang Lahat.mp3"
-	//lib.PlayMp3(path, 30)
-	//time.Sleep(60 * time.Second)
-	//fmt.Printf("....finish...")
-	//return
+	lib.ReadAndCreateIndex4tgmsg("D:\\0prj\\mdsj\\mdsjprj\\bin\\Debug\\net8.0\\msgRcvDir")
 
 	lib.EvtBoot(func() {})
 	// 获取当前时间
@@ -28,6 +25,17 @@ func main() {
 	fmt.Println("Current time:", currentTime.Format("2006-01-02 15:04:05"))
 	// Example usage of the save function
 
+	tmrPlaymp3()
+
+	// 保持主函数运行
+	select {}
+	//	lib.BuyEth()
+	//botMsgRcvrHdlr()
+	lib.LoopForever()
+	//	funcName222()
+}
+
+func tmrPlaymp3() {
 	//-------------------- 设置间隔时间为 20min
 	interval := 18 * 60 * time.Second
 
@@ -44,13 +52,6 @@ func main() {
 
 	// 启动定时器，定时执行myFunction
 	go lib.StartTimer(interval, timerFunc)
-
-	// 保持主函数运行
-	select {}
-	//	lib.BuyEth()
-	//botMsgRcvrHdlr()
-	lib.LoopForever()
-	//	funcName222()
 }
 
 func funcName222() {

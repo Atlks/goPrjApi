@@ -15,7 +15,7 @@ func setDbgFunEnter(methodName string, args ...interface{}) {
 	log.Printf("Entering method: %s with args: %v\n", methodName, args)
 }
 
-func setDbgValRtval(methodName string, retval int) {
+func setDbgValRtval(methodName string, retval any) {
 	log.Printf("Exiting method: %s with return value: %d\n", methodName, retval)
 }
 
