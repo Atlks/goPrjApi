@@ -7,7 +7,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func main() {
+func main222() {
 	//连接至数据库
 	// sql.Open()中的数据库连接串格式为："用户名:密码@tcp(IP:端口)/数据库?charset=utf8"。
 	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/mysql")

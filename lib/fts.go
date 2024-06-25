@@ -23,7 +23,7 @@ func SearchMatch(dataDir string, matchKwds string) []map[string]any {
 		value = strings.TrimSpace(value)
 		if len(value) > 0 {
 			fpath := dataDir + "/" + value + ".json"
-			maparr := readJSONFileToMapArray(fpath)
+			maparr, _ := readJSONFileToMapArray(fpath)
 			if needini {
 				result = maparr
 				needini = false

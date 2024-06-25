@@ -18,7 +18,7 @@ func main() {
 	lib.SearchMatch("fullTxtSrchIdxdataDir", "饭店 推荐 ")
 	//	lib.ReadAndCreateIndex4tgmsg("D:\\0prj\\mdsj\\mdsjprj\\bin\\Debug\\net8.0\\msgRcvDir")
 
-	lib.EvtBoot(func() {})
+	lib.EvtBoot(func() {}) // start boot music n splash
 	// 获取当前时间
 	currentTime := time.Now()
 
@@ -26,10 +26,10 @@ func main() {
 	fmt.Println("Current time:", currentTime.Format("2006-01-02 15:04:05"))
 	// Example usage of the save function
 
-	tmrPlaymp3()
+	go tmrPlaymp3()
 
 	// 保持主函数运行
-	select {}
+	//select {}
 	//	lib.BuyEth()
 	//botMsgRcvrHdlr()
 	lib.LoopForever()
