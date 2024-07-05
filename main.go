@@ -15,7 +15,7 @@ func main() {
 
 	defer lib.HandlePanic()
 
-	lib.SearchMatch("fullTxtSrchIdxdataDir", "饭店 推荐 ")
+	//lib.SearchMatch("fullTxtSrchIdxdataDir", "饭店 推荐 ")
 	//	lib.ReadAndCreateIndex4tgmsg("D:\\0prj\\mdsj\\mdsjprj\\bin\\Debug\\net8.0\\msgRcvDir")
 
 	lib.EvtBoot(func() {}) // start boot music n splash

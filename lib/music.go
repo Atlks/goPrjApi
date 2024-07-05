@@ -80,7 +80,7 @@ func SearchAndDownloadSong(apiKey, query string) error {
 	return nil
 }
 
-func main() {
+func main555() {
 	apiKey := "YOUR_YOUTUBE_API_KEY"
 	songName := "Shape of You Ed Sheeran"
 	err := SearchAndDownloadSong(apiKey, songName)
