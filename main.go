@@ -15,6 +15,20 @@ func main() {
 
 	defer lib.HandlePanic()
 
+	filePath := "C:\\Users\\Administrator\\Documents\\sumdoc 2405\\wordEngCNsMap5k v8.xlsx" // 替换为你的xlsx文件路径
+
+	// 调用函数读取xlsx文件并转换为json
+	jsonData, err := lib.ReadXlsxToJson(filePath)
+	if err != nil {
+		log.Fatalf("Error reading xlsx file: %v", err)
+	}
+
+	// 输出json数据
+	//	fmt.Println(jsonData)
+	lib.SaveToFile("wd.engCns5k.json", jsonData)
+
+	//	go lib.TextToSpeech("启动了启动了")
+
 	//lib.SearchMatch("fullTxtSrchIdxdataDir", "饭店 推荐 ")
 	//	lib.ReadAndCreateIndex4tgmsg("D:\\0prj\\mdsj\\mdsjprj\\bin\\Debug\\net8.0\\msgRcvDir")
 
@@ -27,6 +41,18 @@ func main() {
 	// Example usage of the save function
 
 	go tmrPlaymp3()
+
+	lib.StartWebapi(func(context lib.HttpContext) {
+		request := context.Request
+		methd := request.URL.Path
+
+		if methd == "/swag" {
+			context.Response.Header().Set("Content-Type", "text/html; charset=utf-8")
+			rzt := "docapi_httpHdlrApiSpelDocapi(mdsj.xml, context)"
+			context.Response.Write([]byte(rzt))
+			lib.Jmp2end()
+		}
+	}, "Wbapi_")
 
 	// 保持主函数运行
 	//select {}

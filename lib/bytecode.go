@@ -2,6 +2,8 @@ package lib
 
 import (
 	"fmt"
+	"io/ioutil"
+	"os"
 	"reflect"
 )
 
@@ -100,6 +102,35 @@ func logErr2024(e error, methodName, errdir string, dbgobj map[string]interface{
 	// 这里只是简单地打印错误日志，实际中需要根据具体需求实现
 }
 
+// SaveToFile 将字符串内容保存到指定的文本文件中
+func SaveToFile(filename, content string) error {
+	// 打开文件，如果不存在则创建，如果存在则清空文件
+	file, err := os.Create(filename)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	// 将内容写入文件
+	_, err = file.WriteString(content)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// SaveToFileUsingIoutil 使用 ioutil.WriteFile 将字符串内容保存到指定的文本文件中
+func SaveToFileUsingIoutil(filename, content string) error {
+	// 将内容写入文件
+	err := ioutil.WriteFile(filename, []byte(content), 0644)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // 模拟函数：call_user_func
 func call_user_func(callback Delegate, args ...interface{}) interface{} {
 	methodName := ""
@@ -146,9 +177,62 @@ func call_user_func(callback Delegate, args ...interface{}) interface{} {
 	return o
 }
 
+func (e jmp2endEx) Error() string {
+	return "jmp2endEx triggered"
+}
+
+///
+/*
+func main() {
+	// 示例调用Jmp2end函数
+	defer func() {
+		if r := recover(); r != nil {
+			if _, ok := r.(jmp2endEx); ok {
+				fmt.Println("Recovered from jmp2endEx")
+			} else {
+				panic(r) // 重新抛出非jmp2endEx类型的异常
+			}
+		}
+	}()
+
+	Jmp2end()
+}
+
+*/
+func Jmp2end() {
+	// jmp2exitFlag = true; // 这个flag在Go中可以根据需要定义和使用
+	panic(jmp2endEx{})
+}
+
 // 自定义异常类型 jmp2endEx
 type jmp2endEx struct{}
 
+func ToString(value interface{}) string {
+	if value == nil {
+		return ""
+	}
+
+	// 如果值本身就是字符串类型
+	if str, ok := value.(string); ok {
+		return str
+	}
+
+	// 其他类型转换为字符串
+	return fmt.Sprintf("%v", value)
+}
+func ConvertToString(value interface{}) string {
+	if value == nil {
+		return ""
+	}
+
+	// 如果值本身就是字符串类型
+	if str, ok := value.(string); ok {
+		return str
+	}
+
+	// 其他类型转换为字符串
+	return fmt.Sprintf("%v", value)
+}
 func mai77n() {
 	// 测试调用 call_user_func
 	callback := Delegate{Method: YourMethodName} // 假设 YourMethodName 是一个已定义的函数

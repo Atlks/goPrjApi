@@ -3,14 +3,18 @@ module awesomeProject
 go 1.22
 
 require (
+	github.com/aaaton/golem v0.0.0-20191129093449-a9f1a1b6b185
 	github.com/ethereum/go-ethereum v1.14.5
 	github.com/faiface/beep v1.1.0
 	github.com/fogleman/gg v1.3.0
 	github.com/go-ego/gse v0.80.2
 	github.com/go-sql-driver/mysql v1.8.1
 	github.com/go-telegram-bot-api/telegram-bot-api/v5 v5.5.1
+	github.com/gorhill/cronexpr v0.0.0-20180427100037-88b0669f7d75
 	github.com/mattn/go-sqlite3 v1.14.22
 	github.com/shopspring/decimal v1.4.0
+	github.com/tealeg/xlsx v1.0.5
+	golang.org/x/net v0.26.0
 	google.golang.org/api v0.185.0
 	gopkg.in/ini.v1 v1.67.0
 )
@@ -63,7 +67,6 @@ require (
 	golang.org/x/exp/shiny v0.0.0-20240613232115-7f521ea00fb8 // indirect
 	golang.org/x/image v0.17.0 // indirect
 	golang.org/x/mobile v0.0.0-20231127183840-76ac6878050a // indirect
-	golang.org/x/net v0.26.0 // indirect
 	golang.org/x/oauth2 v0.21.0 // indirect
 	golang.org/x/sync v0.7.0 // indirect
 	golang.org/x/sys v0.21.0 // indirect
