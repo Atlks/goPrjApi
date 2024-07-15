@@ -15,7 +15,7 @@ func main() {
 
 	defer lib.HandlePanic()
 
-	filePath := "C:\\Users\\Administrator\\Documents\\sumdoc 2405\\wordEngCNsMap5k v8.xlsx" // 替换为你的xlsx文件路径
+	filePath := "C:\\Users\\Administrator\\Documents\\sumdoc 2405\\misswd.xlsx" // 替换为你的xlsx文件路径
 
 	// 调用函数读取xlsx文件并转换为json
 	jsonData, err := lib.ReadXlsxToJson(filePath)
@@ -25,7 +25,7 @@ func main() {
 
 	// 输出json数据
 	//	fmt.Println(jsonData)
-	lib.SaveToFile("wd.engCns5k.json", jsonData)
+	lib.SaveToFile("wd.tmp3k.json", jsonData)
 
 	//	go lib.TextToSpeech("启动了启动了")
 
