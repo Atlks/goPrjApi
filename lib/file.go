@@ -7,8 +7,36 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"path/filepath"
 	"time"
 )
+
+// MoveFileToDirectory moves a file from sourceFilePath to destinationDirectory.
+func MoveFileToDirectory(sourceFilePath, destinationDirectory string) {
+	// 检查目标文件夹是否存在，如果不存在则创建
+	if _, err := os.Stat(destinationDirectory); os.IsNotExist(err) {
+		err := os.MkdirAll(destinationDirectory, os.ModePerm)
+		if err != nil {
+			fmt.Printf("An error occurred while creating directory: %s\n", err.Error())
+			return
+		}
+	}
+
+	// 获取源文件的文件名
+	fileName := filepath.Base(sourceFilePath)
+
+	// 构造目标文件的完整路径
+	destinationFilePath := filepath.Join(destinationDirectory, fileName)
+
+	// 移动文件
+	err := os.Rename(sourceFilePath, destinationFilePath)
+	if err != nil {
+		fmt.Printf("An error occurred while moving file: %s\n", err.Error())
+		return
+	}
+
+	fmt.Printf("File moved to: %s\n", destinationFilePath)
+}
 
 // wrtLgTypeDate 创建目录并将对象编码为 JSON 格式写入带有时间戳的文件中
 func FwrtLgTypeDate(logdir string, o interface{}) {

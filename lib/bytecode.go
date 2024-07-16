@@ -1,10 +1,12 @@
 package lib
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"os"
 	"reflect"
+	"time"
 )
 
 // 模拟 ldfld 函数，根据字段名获取字段值或默认值
@@ -100,6 +102,48 @@ func jmp2end() {
 func logErr2024(e error, methodName, errdir string, dbgobj map[string]interface{}) {
 	fmt.Printf("Error in method %s: %v\n", methodName, e)
 	// 这里只是简单地打印错误日志，实际中需要根据具体需求实现
+}
+
+func NewSet(f string) map[string]struct{} {
+	hashSet := make(map[string]struct{})
+
+	if !isFileExist(f) {
+		hashSet = make(map[string]struct{})
+	} else {
+		data, err := ioutil.ReadFile(f)
+		if err != nil {
+			fmt.Println("Error reading file:", err)
+			return hashSet
+		}
+		if err := json.Unmarshal(data, &hashSet); err != nil {
+			fmt.Println("Error unmarshalling JSON:", err)
+			return hashSet
+		}
+	}
+
+	// 定时持久化 hashSet
+	go func() {
+		ticker := time.NewTicker(2 * time.Second)
+		defer ticker.Stop()
+		for range ticker.C {
+			setHsstToF(hashSet, f)
+		}
+	}()
+
+	return hashSet
+}
+
+func isFileExist(filename string) bool {
+	info, err := os.Stat(filename)
+	if os.IsNotExist(err) {
+		return false
+	}
+	return !info.IsDir()
+}
+
+func setHsstToF(hashSet map[string]struct{}, f string) {
+	WriteAllText(f, EncodeJson(hashSet))
+
 }
 
 // SaveToFile 将字符串内容保存到指定的文本文件中

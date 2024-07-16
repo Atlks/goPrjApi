@@ -3,7 +3,7 @@ module awesomeProject
 go 1.22
 
 require (
-	github.com/aaaton/golem v0.0.0-20191129093449-a9f1a1b6b185
+	github.com/PuerkitoBio/goquery v1.9.2
 	github.com/ethereum/go-ethereum v1.14.5
 	github.com/faiface/beep v1.1.0
 	github.com/fogleman/gg v1.3.0
@@ -26,6 +26,7 @@ require (
 	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/Microsoft/go-winio v0.6.2 // indirect
 	github.com/StackExchange/wmi v1.2.1 // indirect
+	github.com/andybalholm/cascadia v1.3.2 // indirect
 	github.com/bits-and-blooms/bitset v1.10.0 // indirect
 	github.com/btcsuite/btcd/btcec/v2 v2.2.0 // indirect
 	github.com/consensys/bavard v0.1.13 // indirect

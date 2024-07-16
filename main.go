@@ -15,17 +15,11 @@ func main() {
 
 	defer lib.HandlePanic()
 
-	filePath := "C:\\Users\\Administrator\\Documents\\sumdoc 2405\\misswd.xlsx" // 替换为你的xlsx文件路径
+	spdr := &lib.Spdr{}
 
-	// 调用函数读取xlsx文件并转换为json
-	jsonData, err := lib.ReadXlsxToJson(filePath)
-	if err != nil {
-		log.Fatalf("Error reading xlsx file: %v", err)
-	}
+	spdr.SpdrTest()
 
-	// 输出json数据
-	//	fmt.Println(jsonData)
-	lib.SaveToFile("wd.tmp3k.json", jsonData)
+	//xlsx2json()
 
 	//	go lib.TextToSpeech("启动了启动了")
 
@@ -60,6 +54,20 @@ func main() {
 	//botMsgRcvrHdlr()
 	lib.LoopForever()
 	//	funcName222()
+}
+
+func xlsx2json() {
+	filePath := "C:\\Users\\Administrator\\Documents\\sumdoc 2405\\misswd.xlsx" // 替换为你的xlsx文件路径
+
+	// 调用函数读取xlsx文件并转换为json
+	jsonData, err := lib.ReadXlsxToJson(filePath)
+	if err != nil {
+		log.Fatalf("Error reading xlsx file: %v", err)
+	}
+
+	// 输出json数据
+	//	fmt.Println(jsonData)
+	lib.SaveToFile("wd.tmp3k.json", jsonData)
 }
 
 func tmrPlaymp3() {
@@ -143,7 +151,7 @@ func testSave() {
 	saveDataDir := "测试数据表目录"
 	dbg := make(map[string]interface{})
 	sortedListNew := map[string]interface{}{
-		"国家":   "China",
+		"国家": "China",
 		"name": "tomm", "id": "007",
 	}
 

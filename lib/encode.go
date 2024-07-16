@@ -82,6 +82,12 @@ func Json_encode(obj any) string {
 	bytes, _ := json.MarshalIndent(obj, "", "  ")
 	return (string(bytes))
 }
+func EncodeJson(obj any) string {
+
+	//prefix ==per line frt char
+	bytes, _ := json.MarshalIndent(obj, "", "  ")
+	return (string(bytes))
+}
 
 func Json_decode(str string) map[string]any {
 	data := []byte(str)
