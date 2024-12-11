@@ -2,6 +2,7 @@ package lib
 
 import (
 	"errors"
+	"fmt"
 	"reflect"
 	"strconv"
 )
@@ -147,4 +148,19 @@ func toFloat64(in interface{}) (f64 float64, err error) {
 	default:
 		return 0, errors.New("convert to float64 failed")
 	}
+}
+
+/*
+*
+计算slice的长度，元素数量
+*/
+func LenArr(arr3 any) int {
+	// 检查 arr3 是否是切片类型
+	v := reflect.ValueOf(arr3)
+	if v.Kind() != reflect.Slice {
+		fmt.Println("Input is not a slice")
+		return 0
+	}
+	// 返回切片的长度
+	return v.Len()
 }
