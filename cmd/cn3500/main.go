@@ -19,8 +19,44 @@ func main() {
 	arr2 := rdFileSpltTxtToArrDedulp("C:\\0prj\\paymentJava2024\\lib\\2500cnChar.txt")
 	arr3 := MergeArr(arr1, arr2)
 	arr3 = fltArrEmptyNnotCnchar(arr3)
-	fmt.Printf(lib.EncodeJson(arr3))
+	foreachArr(arr3)
+	json3500 := lib.EncodeJson(arr3)
+	fmt.Printf(json3500)
+	lib.Write("3500cn chars.json", json3500)
 	fmt.Printf(strconv.Itoa(lib.LenArr(arr3)))
+}
+
+func foreachArr(arr3 interface{}) {
+	// 将输入的切片转换为 []string
+	arr1 := toStrArr(arr3)
+	// 遍历并打印每个元素
+	for _, r := range arr1 {
+		fmt.Println(r) // 使用 fmt.Println 进行输出
+	}
+}
+
+// toStrArr 函数：将 interface{} 转换为 []string
+func toStrArr(arr3 interface{}) []string {
+	// 检查 arr3 是否是切片类型
+	v := reflect.ValueOf(arr3)
+	if v.Kind() != reflect.Slice {
+		fmt.Println("Input is not a slice")
+		return []string{}
+	}
+
+	// 用于存储字符串切片
+	var result []string
+
+	// 遍历切片
+	for i := 0; i < v.Len(); i++ {
+		item := v.Index(i).Interface()
+		str, ok := item.(string)
+		if ok {
+			result = append(result, str)
+		}
+	}
+
+	return result
 }
 
 /*
